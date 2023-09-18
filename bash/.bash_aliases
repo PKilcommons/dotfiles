@@ -6,4 +6,6 @@ alias gcd="git checkout"
 # Doesn't include --all-features to avoid testing compile heavy features in normal use
 alias nextest-slim="cargo nextest run"
 alias nextest="cargo nextest run --all-features"
+alias nextest-hack="cargo hack nextest run --all-targets --feature-powerset"
 alias clippy="cargo +nightly clippy --all-features --tests -Zlints"
+alias clippy-hack="cargo +nightly hack clippy --all-targets --feature-powerset -Zlints"
