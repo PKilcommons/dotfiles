@@ -1,0 +1,11 @@
+[credential]
+	helper = store
+[user]
+	email = patrick.kilcommons@transigma.com
+	name = PKilcommons
+[color]
+	ui = auto
+[core]
+	editor = /usr/bin/vim
+[status]
+	showStash = true
