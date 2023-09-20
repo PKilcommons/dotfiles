@@ -35,6 +35,7 @@ export PATH="$HOME/neovim/bin:$PATH"
 export PIPX_DEFAULT_PYTHON=python3.11
 export HATCH_PYTHON=$PIPX_DEFAULT_PYTHON
 export CARGO_TARGET_DIR=$HOME/.cargo-target
+export RUST_BACKTRACE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export ORG_GH_PAT=$(< $HOME/.github/org_pat)
 export GCI_PAT=$(< $HOME/.github/gci_pat)

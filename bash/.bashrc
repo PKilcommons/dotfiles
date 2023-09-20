@@ -63,11 +63,11 @@ else
 fi
 unset color_prompt force_color_prompt
 
-# As the working directory of VSCode isn't going to change much this helps reduce clutter on the terminal
-if [ "$TERM_PROGRAM" = "vscode" ] && [[ -n $VSCODE_WORKSPACE ]]; then # $VSCODE_WORKSPACE should be set as ${workspaceFolder} in VSCode's `settings.json`
+# This is to help reduce noise on terminal when staying in the repo root of a project.
+if [[ -n $PROJECT_WORKSPACE ]]; then # $PROJECT_WORKSPACE should be set as ${workspaceFolder} in VSCode's `settings.json`
     top_dir()
     {
-        top_level=${PWD/#*$(dirname $VSCODE_WORKSPACE)\//.\/}
+        top_level=${PWD/#*$(dirname $PROJECT_WORKSPACE)\//.\/}
         home_alt=${top_level/#$HOME/"~"} # If the directory breaks the top level, this replaces the user home with the ~ shorthand
         echo $home_alt
     }
