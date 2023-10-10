@@ -1,0 +1,1 @@
+awk '/^size/ { print $3 / 1048576 " MB"}' < /proc/spl/kstat/zfs/arcstats

@@ -1,0 +1,21 @@
+#!/bin/bash
+# Print branches which are out of sync with remote.
+
+# An awk leftpadding solution like
+# https://unix.stackexchange.com/questions/442817/how-to-left-pad-a-column-in-bash/442822#442822
+# is probably more reasonable, but for simplicity the backslashes with `column` work for right now
+sentinal="\\\\"
+
+git branch -v | \
+    awk -v sentinal=$sentinal '
+        BEGIN {
+            FPAT =  "([^ ]+)|(\\[.*\\])" 
+        } 
+
+        { gsub("*", "") }
+
+        /gone|ahead|behind/ {
+            print $3 ":" sentinal $1, sprintf("(%s)", $2) sentinal, substr($0, index($0, $4))
+        }' | \
+    sort | \
+    column -s $sentinal -t -n
