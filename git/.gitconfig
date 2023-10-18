@@ -9,3 +9,17 @@
 	editor = /usr/bin/vim
 [status]
 	showStash = true
+
+# For `git-delta`. See https://github.com/dandavison/delta
+[core]
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only --features=interactive
+[delta]
+    navigate = true
+    side-by-side = true
+    syntax-theme = Monokai Extended
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
