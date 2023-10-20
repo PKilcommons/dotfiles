@@ -1,0 +1,348 @@
+{
+    "editor.renderWhitespace": "boundary",
+    "editor.suggestSelection": "first",
+    "git.ignoreMissingGitWarning": true,
+    "git.autofetch": true,
+    "workbench.startupEditor": "welcomePageInEmptyWorkbench",
+    "remote.SSH.remotePlatform": {
+        "Babylon": "linux",
+        "192.168.1.126": "linux"
+    },
+    "terminal.integrated.commandsToSkipShell": [
+        "-workbench.action.terminal.paste"
+    ],
+    "remote.SSH.configFile": "C:\\Users\\Patrick\\.ssh\\config",
+    "python.languageServer": "Pylance",
+    "files.trimTrailingWhitespace": true,
+    "debug.onTaskErrors": "showErrors",
+    "hexeditor.columnWidth": 16,
+    "hexeditor.showDecodedText": true,
+    "hexeditor.defaultEndianness": "little",
+    "hexeditor.inspectorType": "aside",
+    "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "always",
+    "rust-analyzer.inlayHints.lifetimeElisionHints.useParameterNames": true,
+    "cSpell.userWords": [
+        "agnostically",
+        "argparse",
+        "cleanup",
+        "dataframes",
+        "dtype",
+        "dtypes",
+        "initdb",
+        "linters",
+        "nosql",
+        "pyenv",
+        "pyproject",
+        "pytest",
+        "RDBMSs",
+        "serialised",
+        "setuputils",
+        "sqitch",
+        "supersedence",
+        "TIMESTAMPTZ",
+        "undescriptive",
+        "venv",
+        "venvs",
+        "virtualenv"
+    ],
+    "cSpell.language": "en-GB",
+    "cSpell.enableFiletypes": [
+        "!cpp",
+        "!go",
+        "!json",
+        "!jsonc",
+        "!python",
+        "!rust"
+    ],
+    "svg.preview.mode": "svg",
+    "files.trimFinalNewlines": true,
+    "files.insertFinalNewline": true,
+    "terminal.integrated.env.linux": {
+        "PROJECT_WORKSPACE":"${workspaceFolder}",
+        "PYTHONPATH":"${workspaceFolder}",
+    },
+    "terminal.integrated.profiles.linux": {
+        "tmux": {
+            "path": "bash",
+            // Use `-e` on 3.2 to pass env vars at creation. For now these are manually set after session creation.
+            // For the time being, this will set the env then trigger the export it on connection.
+            "args": ["-c", "tmux new -ADs vscode-${PWD##*/} \\; setenv PROJECT_WORKSPACE ${workspaceFolder} \\; setenv PYTHONPATH ${workspaceFolder} \\; send-keys -t 1 'export PROJECT_WORKSPACE=${workspaceFolder}; export PYTHONPATH=${workspaceFolder}; source $HOME/.bashrc' C-m"],
+            "icon": "vm",
+            "color": "terminal.ansiCyan"
+        },
+    },
+    "terminal.integrated.defaultProfile.linux": "tmux",
+    "terminal.integrated.fontFamily": "Consolas NF",
+    "workbench.iconTheme": "eq-material-theme-icons-ocean",
+    "todo-tree.tree.flat": true,
+    "todo-tree.tree.showCountsInTree": true,
+    "todo-tree.tree.buttons.export": true,
+    "todo-tree.tree.buttons.groupByTag": false,
+    "window.customMenuBarAltFocus": false,
+    "editor.detectIndentation": false, // Alt no longer toggles to the menubar, but it's still usable on hold
+    "debug.allowBreakpointsEverywhere": true,
+    //"editor.inlayHints.enabled": "offUnlessPressed",
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "editor.inlayHints.fontFamily": "Consolas",
+    "editor.inlayHints.fontSize": 11,
+    "workbench.colorCustomizations": {
+        // Name of the theme you are currently using
+        "[Monokai]": {
+            // Overrides for specific kinds of inlay hints
+            "editorInlayHint.foreground": "#b3afaff0",
+            "editorInlayHint.background": "#00000000",
+            "editorInlayHint.typeBackground": "#00000000",
+        }
+      },
+    "editor.tokenColorCustomizations": {
+        "[Monokai]": {
+            "textMateRules": [
+                {
+                    // Make comments slightly brighter than Monokai's native comment colour to make them easier to read
+                    "scope": "comment",
+                    "settings": {
+                        "foreground": "#8d8282"
+                        }
+                },
+
+                // Makes doc comments and Python docstring make string literal colour
+                {
+                    "scope": [
+                        "string.quoted.docstring.multi.python",
+                        "comment.block.documentation",
+                        "comment.line.documentation",
+                    ],
+                    "settings": {
+                        "foreground": "#E6DB74"
+                        },
+                },
+                {
+                    "scope": "keyword.other",
+                    "settings": {
+                        "foreground": "#66D9EF" //"#F92672"
+                        },
+                },
+                {
+                    "scope": "constant.other.caps.python",
+                    "settings": {
+                        "foreground": "#AE81FF"
+                    }
+                },
+                // Rust-specific
+                {
+                    "scope": ["keyword.other.fn.rust", "storage.modifier.visibility.rust"],
+                    "settings": {
+                        "fontStyle": "italic"
+                        },
+                },
+            ]
+        }
+      },
+    "Prettier-SQL.commaPosition": "before",
+    "Prettier-SQL.SQLFlavourOverride": "postgresql",
+    "Prettier-SQL.tabSizeOverride": 4,
+    "Prettier-SQL.tabulateAlias": true,
+    "Prettier-SQL.keywordCase": "upper",
+    "black-formatter.args": ["--config", "pyproject.toml"],
+    "ruff.lint.args": [
+        "--config", "pyproject.toml",
+        // When looking at stdlib source VSCode will follow the symlink into the system Python directory which isn't in
+        // ruff's ignore list
+        "--extend-exclude=/usr/lib/python*/*.py",
+        "--extend-exclude=/usr/lib/python*/*.pyi",
+        "--extend-exclude=/home/gilgamesh/.vscode-server/**/*.py",
+        "--extend-exclude=/home/gilgamesh/.vscode-server/**/*.pyi",
+    ],
+    "ruff.organizeImports": true,
+    "ruff.importStrategy": "fromEnvironment",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.semanticHighlighting.enabled": true,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        },
+    },
+    "[rust]": {
+        "editor.defaultFormatter": "rust-lang.rust-analyzer",
+        "editor.formatOnSave": true,
+    },
+    "rust-analyzer.check.command": "clippy",
+    "rust-analyzer.check.overrideCommand": [
+        "cargo",
+        "+nightly",
+        "clippy",
+        "-Zlints",
+        "--all-features",
+        "--all-targets",
+        "--message-format=json",
+    ],
+    "rust-analyzer.rustfmt.extraArgs": [
+        "+nightly",
+    ],
+    // LSP highlighting
+    // https://code.visualstudio.com/api/language-extensions/semantic-highlight-guide#standard-token-types-and-modifiers
+    "editor.semanticTokenColorCustomizations": {
+        "[Monokai]": {
+            "rules": {
+                    "variable.static": "#AE81FF",
+                    "*.readonly": "#AE81FF",
+                    "variable.readonly.defaultLibrary": "#AE81FF",
+                    "readonly": "#AE81FF",
+                    "enumMember": {
+                        "foreground": "#AE81FF",
+                        "underline": true
+                    },
+                    "builtinType": {
+                        "foreground": "#A6E22E",
+                        "italic": false,
+                        "underline": true
+                    },
+                    "typeAlias": {
+                        "foreground": "#A6E22E",
+                        "italic": false,
+                        "underline": true
+                    },
+                    "*.defaultLibrary":"#A6E22E",
+                    "interface": {
+                        "underline": false,
+                        "italic": true
+                    },
+                    "method": {
+                        "foreground":"#A6E22E",
+                        "underline": false,
+                        "italic": false
+                    },
+                    "selfKeyword": {
+                        "foreground": "#FD971F",
+                    },
+                    "selfTypeKeyword": {
+                        "foreground": "#A6E22E",
+                        "underline": true
+                    },
+                    "parameter": {
+                        "foreground": "#FD971F",
+                        "italic": false,
+                    },
+                    "namespace": {
+                        "italic": true
+                    },
+                    "formatSpecifier": "#AE81FF",
+                    // Rust specific https://rust-analyzer.github.io/manual.html#semantic-syntax-highlighting
+
+                    // `rust-analyzer` uses a default that is the same colour default as a normal comment. This makes
+                    // sure that is overwritten so that we use the TextMate pattern
+                    "*.documentation": "#E6DB74",
+                    "variable.consuming": {
+                        "strikethrough": true
+                    },
+                    "variable.reference": {
+                        "italic": true
+                    },
+                    "parameter.reference": {
+                        "italic": true
+                    },
+                    "selfKeyword.reference": {
+                        "italic": true
+                    },
+                    // Since `crate` is technically a keyword this keeps its style inline with modules
+                    "keyword.crateRoot": {
+                        "foreground": "#A6E22E",
+                        "italic": true,
+                        "underline": true
+                    },
+                    "keyword.async": {
+                        "italic": true,
+                    },
+            }
+        },
+    },
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.variableTypes": true,
+    "python.analysis.inlayHints.pytestParameters": true,
+  // "python.analysis.inlayHints.callArgumentNames": true,
+    "rust-analyzer.typing.autoClosingAngleBrackets.enable": true,
+    "rust-analyzer.inlayHints.closureReturnTypeHints.enable": "always",
+    "rust-analyzer.cargo.features": "all",
+    "BracketHighlighter.blurOpacity": "0.985",
+    "BracketHighlighter.highlightScopeFromText": true,
+    "BracketHighlighter.textColor": "",
+    "BracketHighlighter.timeOutValue": 150,
+    "BracketHighlighter.textColorSymbol": "",
+    "BracketHighlighter.differentSymbolHighlightingUsed": true,
+    "BracketHighlighter.outlineSymbol": "1px solid rgb(255, 170, 33)",
+    "editor.rulers": [{"column":120, "color":"#6969694d"}],
+    "files.exclude": {
+        ".pytest_cache": true,
+        ".ruff_cache": true,
+        "**/__pycache__": true,
+        "**/.pdm-build": true
+    },
+    "todo-tree.highlights.defaultHighlight": {
+        "foreground": "#F92472",
+        "opacity": 0,
+        "type": "tag-and-comment"
+    },
+    "errorLens.enableOnDiffView": true,
+    "errorLens.gutterIconsEnabled": true,
+    "errorLens.statusBarIconsEnabled": true,
+    "errorLens.statusBarColorsEnabled": true,
+    "errorLens.enabledDiagnosticLevels": [
+        "error",
+        "warning",
+        "info",
+        "hint"
+    ],
+    "gitlens.defaultGravatarsStyle": "retro",
+    "gitlens.showWelcomeOnInstall": false,
+    "gitlens.plusFeatures.enabled": false,
+    "errorLens.enabledInMergeConflict": false,
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "XXX",
+        "[ ]",
+        "[x]",
+        "NOTE",
+        "SAFETY"
+    ],
+    "[go]": {
+        "editor.formatOnSave": false
+    },
+    "go.formatTool": "gofmt",
+    "workbench.colorTheme": "Monokai",
+    "docker.volumes.sortBy": "CreatedTime",
+    "hadolint.hadolintPath": "/home/gilgamesh/.local/bin/hadolint",
+    "github.branchProtection": true,
+    "gitlens.views.commits.files.icon": "status",
+    "gitlens.mode.statusBar.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.codeLens.enabled": false,
+    "gitlens.currentLine.uncommittedChangesFormat": "${working} ${ago}",
+    "gitlens.hovers.enabled": false,
+    "evenBetterToml.semanticTokens": true,
+    "gitlens.currentLine.enabled": false,
+    "go.toolsManagement.autoUpdate": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "githubPullRequests.fileListLayout": "tree",
+    "githubPullRequests.pullBranch": "never",
+    "githubPullRequests.useReviewMode": {
+        "merged": false
+    },
+    "python.analysis.autoFormatStrings": true,
+    "python.analysis.autoImportCompletions": true,
+    "githubPullRequests.defaultMergeMethod": "squash",
+    "githubPullRequests.createDraft": true,
+    "githubPullRequests.showPullRequestNumberInTree": true,
+    "rust-analyzer.hover.actions.references.enable": true,
+    "rust-analyzer.semanticHighlighting.operator.specialization.enable": true,
+    "rust-analyzer.semanticHighlighting.punctuation.separate.macro.bang": true,
+    "window.commandCenter": false,
+    "inlineSQL.dbPort": 5437,
+    "inlineSQL.dbPassword": "secret",
+    "evenBetterToml.formatter.columnWidth": 120,
+    "evenBetterToml.formatter.arrayTrailingComma": true,
+    "evenBetterToml.formatter.arrayAutoCollapse": true,
+}
