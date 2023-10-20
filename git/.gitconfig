@@ -1,14 +1,14 @@
 [credential]
-	helper = store
+    helper = store
 [user]
-	email = patrick.kilcommons@transigma.com
-	name = PKilcommons
+    email = patrick.kilcommons@transigma.com
+    name = PKilcommons
 [color]
-	ui = auto
+    ui = auto
 [core]
-	editor = /usr/bin/vim
+    editor = $HOME/neovim/bin/nvim
 [status]
-	showStash = true
+    showStash = true
 
 # For `git-delta`. See https://github.com/dandavison/delta
 [core]
