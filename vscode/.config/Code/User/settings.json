@@ -276,7 +276,8 @@
         ".pytest_cache": true,
         ".ruff_cache": true,
         "**/__pycache__": true,
-        "**/.pdm-build": true
+        "**/.pdm-build": true,
+        "**/.vscode": true
     },
     "todo-tree.highlights.defaultHighlight": {
         "foreground": "#F92472",
@@ -345,4 +346,5 @@
     "evenBetterToml.formatter.columnWidth": 120,
     "evenBetterToml.formatter.arrayTrailingComma": true,
     "evenBetterToml.formatter.arrayAutoCollapse": true,
+    "editor.minimap.autohide": true,
 }
