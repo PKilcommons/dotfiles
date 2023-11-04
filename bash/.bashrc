@@ -128,6 +128,9 @@ if ! shopt -oq posix; then
 fi
 . "$HOME/.cargo/env"
 
+# Start `ssh-agent`, load specified SSH keys. See `man keychain` for more details.
+eval $(keychain --clear --eval id_ed25519_github 2> /dev/null)
+
 # tere requires this function to run `cd` when it exits
 tere() {
     local result=$(command tere "$@" --mouse=on)

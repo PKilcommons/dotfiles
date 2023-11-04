@@ -1,8 +1,7 @@
-[credential]
-    helper = store
 [user]
     email = patrick.kilcommons@transigma.com
     name = PKilcommons
+    signingkey = /home/gilgamesh/.ssh/id_ed25519_github.pub
 [color]
     ui = auto
 [core]
@@ -23,3 +22,7 @@
     conflictstyle = diff3
 [diff]
     colorMoved = default
+[gpg]
+    format = ssh
+[commit]
+    gpgsign = true
