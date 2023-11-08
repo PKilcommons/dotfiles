@@ -1,8 +1,9 @@
 alias gs="git status"
-alias gl="git log"
+alias gl="git log --stat --format=fuller"
 alias gback="git checkout @{-1}"
 alias gb="git branch"
 alias gcd="git checkout"
+alias gshow="git show --quiet --stat --format=fuller"
 alias cback="cd ~-" # cd - > /dev/null would also work
 # Doesn't include --all-features to avoid testing compile heavy features in normal use
 alias nextest-slim="cargo nextest run"
