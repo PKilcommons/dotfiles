@@ -9,7 +9,9 @@ alias cback="cd ~-" # cd - > /dev/null would also work
 alias nextest-slim="cargo nextest run"
 alias nextest="cargo nextest run --all-features"
 alias nextest-hack="cargo hack nextest run --all-targets --feature-powerset"
-alias clippy="cargo +nightly clippy --all-features --tests -Zlints"
-alias clippy-hack="cargo +nightly hack clippy --all-targets --feature-powerset -Zlints"
+alias clippy="cargo clippy --all-features --tests"
+alias clippy-hack="cargo hack clippy --all-targets --feature-powerset"
+alias rsdoc="cargo +nightly doc --all-features"
+alias rsdoctest="cargo +nightly test --doc --all-features"
 
 alias weather="wthrr"
