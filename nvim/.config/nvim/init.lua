@@ -386,7 +386,7 @@ vim.o.wrap = false
 vim.o.ai = true -- Auto indent
 vim.o.si = true -- Smart indent
 vim.opt.list = true
-vim.opt.listchars = {trail = ".", multispace = ".", nbsp = "␣", tab = "→ "}
+vim.opt.listchars = {trail = "·", multispace = "·", nbsp = "␣", tab = "→ "}
 vim.o.cursorline = true
 vim.opt.colorcolumn = "120"
 -- Reduce column length in `git commit` to the conventional limit
