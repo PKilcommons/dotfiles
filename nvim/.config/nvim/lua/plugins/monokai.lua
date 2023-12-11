@@ -1,7 +1,8 @@
 return {
-  'tanvirtin/monokai.nvim',
+  'loctvl842/monokai-pro.nvim',
   priority = 1000,
   config = function()
-    vim.cmd.colorscheme 'monokai'
+    require("monokai-pro").setup({filter = "classic"})
+    vim.cmd.colorscheme 'monokai-pro'
   end,
 }
