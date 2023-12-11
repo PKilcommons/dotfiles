@@ -63,7 +63,6 @@ vim.opt.rtp:prepend(lazypath)
 --  You can also configure plugins after the setup call,
 --    as they will be available in your neovim runtime.
 require('lazy').setup('plugins')
---require('ibl').setup()
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
@@ -383,6 +382,7 @@ vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.softtabstop = 4
 vim.o.expandtab = true
+vim.o.wrap = false
 vim.o.ai = true -- Auto indent
 vim.o.si = true -- Smart indent
 vim.opt.list = true

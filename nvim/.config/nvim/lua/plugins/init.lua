@@ -8,6 +8,10 @@ return {
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
+  -- Side scrollbar
+  {
+    'petertriho/nvim-scrollbar', opts = {}
+  },
   -- "gc" to comment visual regions/lines
   {
     'numToStr/Comment.nvim', opts = {}

@@ -11,5 +11,9 @@ return {
       smart_indent_cap = false,
       --highlight = highlight,
     },
+    whitespace = {
+        remove_blankline_trail = false,
+    },
+    scope = { enabled = false },
   },
 }
