@@ -13,5 +13,7 @@ alias clippy="cargo clippy --all-features --tests"
 alias clippy-hack="cargo hack clippy --all-targets --feature-powerset"
 alias rsdoc="cargo +nightly doc --all-features"
 alias rsdoctest="cargo +nightly test --doc --all-features"
+# Only relevant for as long as this feature is unstable.
+alias rscript="cargo +nightly -Zscript"
 
 alias weather="wthrr"
