@@ -11,6 +11,10 @@ alias nextest="cargo nextest run --all-features"
 alias nextest-hack="cargo hack nextest run --all-targets --feature-powerset"
 alias clippy="cargo clippy --all-features --tests"
 alias clippy-hack="cargo hack clippy --all-targets --feature-powerset"
+# Unlike the other Cargo aliases this hits every crate. This is because `cargo fmt` doesn't take the `--check` and as
+# such it has to be deferred directly to `rustfmt` which means this can't be passed *additional* args when used as an
+# alias. This doesn't matter though because this command is fast even when hitting every crate.
+alias rsfmt="cargo +nightly fmt --all -- --check"
 alias rsdoc="cargo +nightly doc --all-features"
 alias rsdoctest="cargo +nightly test --doc --all-features"
 # Only relevant for as long as this feature is unstable.
