@@ -58,15 +58,18 @@
     "files.trimFinalNewlines": true,
     "files.insertFinalNewline": true,
     "terminal.integrated.env.linux": {
-        "PROJECT_WORKSPACE":"${workspaceFolder}",
-        "PYTHONPATH":"${workspaceFolder}",
+        "PROJECT_WORKSPACE": "${workspaceFolder}",
+        "PYTHONPATH": "${workspaceFolder}",
     },
     "terminal.integrated.profiles.linux": {
         "tmux": {
             "path": "bash",
             // Use `-e` on 3.2 to pass env vars at creation. For now these are manually set after session creation.
             // For the time being, this will set the env then trigger the export it on connection.
-            "args": ["-c", "tmux new -ADs vscode-${PWD##*/} \\; setenv PROJECT_WORKSPACE ${workspaceFolder} \\; setenv PYTHONPATH ${workspaceFolder} \\; send-keys -t 1 'export PROJECT_WORKSPACE=${workspaceFolder}; export PYTHONPATH=${workspaceFolder}; source $HOME/.bashrc' C-m"],
+            "args": [
+                "-c",
+                "tmux new -ADs vscode-${PWD##*/} \\; setenv PROJECT_WORKSPACE ${workspaceFolder} \\; setenv PYTHONPATH ${workspaceFolder} \\; send-keys -t 1 'export PROJECT_WORKSPACE=${workspaceFolder}; export PYTHONPATH=${workspaceFolder}; source $HOME/.bashrc' C-m"
+            ],
             "icon": "vm",
             "color": "terminal.ansiCyan"
         },
@@ -93,7 +96,7 @@
             "editorInlayHint.background": "#00000000",
             "editorInlayHint.typeBackground": "#00000000",
         }
-      },
+    },
     "editor.tokenColorCustomizations": {
         "[Monokai]": {
             "textMateRules": [
@@ -102,9 +105,8 @@
                     "scope": "comment",
                     "settings": {
                         "foreground": "#8d8282"
-                        }
+                    }
                 },
-
                 // Makes doc comments and Python docstring make string literal colour
                 {
                     "scope": [
@@ -114,13 +116,13 @@
                     ],
                     "settings": {
                         "foreground": "#E6DB74"
-                        },
+                    },
                 },
                 {
                     "scope": "keyword.other",
                     "settings": {
                         "foreground": "#66D9EF" //"#F92672"
-                        },
+                    },
                 },
                 {
                     "scope": "constant.other.caps.python",
@@ -130,22 +132,29 @@
                 },
                 // Rust-specific
                 {
-                    "scope": ["keyword.other.fn.rust", "storage.modifier.visibility.rust"],
+                    "scope": [
+                        "keyword.other.fn.rust",
+                        "storage.modifier.visibility.rust"
+                    ],
                     "settings": {
                         "fontStyle": "italic"
-                        },
+                    },
                 },
             ]
         }
-      },
+    },
     "Prettier-SQL.commaPosition": "before",
     "Prettier-SQL.SQLFlavourOverride": "postgresql",
     "Prettier-SQL.tabSizeOverride": 4,
     "Prettier-SQL.tabulateAlias": true,
     "Prettier-SQL.keywordCase": "upper",
-    "black-formatter.args": ["--config", "pyproject.toml"],
+    "black-formatter.args": [
+        "--config",
+        "pyproject.toml"
+    ],
     "ruff.lint.args": [
-        "--config", "pyproject.toml",
+        "--config",
+        "pyproject.toml",
         // When looking at stdlib source VSCode will follow the symlink into the system Python directory which isn't in
         // ruff's ignore list
         "--extend-exclude=/usr/lib/python*/*.py",
@@ -185,82 +194,81 @@
     "editor.semanticTokenColorCustomizations": {
         "[Monokai]": {
             "rules": {
-                    "variable.static": "#AE81FF",
-                    "*.readonly": "#AE81FF",
-                    "variable.readonly.defaultLibrary": "#AE81FF",
-                    "readonly": "#AE81FF",
-                    "enumMember": {
-                        "foreground": "#AE81FF",
-                        "underline": true
-                    },
-                    "builtinType": {
-                        "foreground": "#A6E22E",
-                        "italic": false,
-                        "underline": true
-                    },
-                    "typeAlias": {
-                        "foreground": "#A6E22E",
-                        "italic": false,
-                        "underline": true
-                    },
-                    "*.defaultLibrary":"#A6E22E",
-                    "interface": {
-                        "underline": false,
-                        "italic": true
-                    },
-                    "method": {
-                        "foreground":"#A6E22E",
-                        "underline": false,
-                        "italic": false
-                    },
-                    "selfKeyword": {
-                        "foreground": "#FD971F",
-                    },
-                    "selfTypeKeyword": {
-                        "foreground": "#A6E22E",
-                        "underline": true
-                    },
-                    "parameter": {
-                        "foreground": "#FD971F",
-                        "italic": false,
-                    },
-                    "namespace": {
-                        "italic": true
-                    },
-                    "formatSpecifier": "#AE81FF",
-                    // Rust specific https://rust-analyzer.github.io/manual.html#semantic-syntax-highlighting
-
-                    // `rust-analyzer` uses a default that is the same colour default as a normal comment. This makes
-                    // sure that is overwritten so that we use the TextMate pattern
-                    "*.documentation": "#E6DB74",
-                    "variable.consuming": {
-                        "strikethrough": true
-                    },
-                    "variable.reference": {
-                        "italic": true
-                    },
-                    "parameter.reference": {
-                        "italic": true
-                    },
-                    "selfKeyword.reference": {
-                        "italic": true
-                    },
-                    // Since `crate` is technically a keyword this keeps its style inline with modules
-                    "keyword.crateRoot": {
-                        "foreground": "#A6E22E",
-                        "italic": true,
-                        "underline": true
-                    },
-                    "keyword.async": {
-                        "italic": true,
-                    },
+                "variable.static": "#AE81FF",
+                "*.readonly": "#AE81FF",
+                "variable.readonly.defaultLibrary": "#AE81FF",
+                "readonly": "#AE81FF",
+                "enumMember": {
+                    "foreground": "#AE81FF",
+                    "underline": true,
+                },
+                "builtinType": {
+                    "foreground": "#A6E22E",
+                    "underline": true,
+                    "italic": false,
+                },
+                "typeAlias": {
+                    "foreground": "#A6E22E",
+                    "underline": true,
+                    "italic": false,
+                },
+                "*.defaultLibrary": "#A6E22E",
+                "interface": {
+                    "underline": false,
+                    "italic": true,
+                },
+                "method": {
+                    "foreground": "#A6E22E",
+                    "underline": false,
+                    "italic": false,
+                },
+                "selfKeyword": {
+                    "foreground": "#FD971F",
+                },
+                "selfTypeKeyword": {
+                    "foreground": "#A6E22E",
+                    "underline": true,
+                },
+                "parameter": {
+                    "foreground": "#FD971F",
+                    "italic": false,
+                },
+                "namespace": {
+                    "italic": true,
+                },
+                "formatSpecifier": "#AE81FF",
+                // Rust specific https://rust-analyzer.github.io/manual.html#semantic-syntax-highlighting
+                // `rust-analyzer` uses a default that is the same colour default as a normal comment. This makes
+                // sure that is overwritten so that we use the TextMate pattern
+                "*.documentation": "#E6DB74",
+                "variable.consuming": {
+                    "strikethrough": true
+                },
+                "variable.reference": {
+                    "italic": true,
+                },
+                "parameter.reference": {
+                    "italic": true,
+                },
+                "selfKeyword.reference": {
+                    "italic": true,
+                },
+                // Since `crate` is technically a keyword this keeps its style inline with modules
+                "keyword.crateRoot": {
+                    "foreground": "#A6E22E",
+                    "underline": true,
+                    "italic": true,
+                },
+                "keyword.async": {
+                    "italic": true,
+                },
             }
         },
     },
     "python.analysis.inlayHints.functionReturnTypes": true,
     "python.analysis.inlayHints.variableTypes": true,
     "python.analysis.inlayHints.pytestParameters": true,
-  // "python.analysis.inlayHints.callArgumentNames": true,
+    // "python.analysis.inlayHints.callArgumentNames": true,
     "rust-analyzer.typing.autoClosingAngleBrackets.enable": true,
     "rust-analyzer.inlayHints.closureReturnTypeHints.enable": "always",
     "rust-analyzer.cargo.features": "all",
@@ -271,7 +279,12 @@
     "BracketHighlighter.textColorSymbol": "",
     "BracketHighlighter.differentSymbolHighlightingUsed": true,
     "BracketHighlighter.outlineSymbol": "1px solid rgb(255, 170, 33)",
-    "editor.rulers": [{"column":120, "color":"#6969694d"}],
+    "editor.rulers": [
+        {
+            "column": 120,
+            "color": "#6969694d"
+        }
+    ],
     "files.exclude": {
         ".pytest_cache": true,
         ".ruff_cache": true,
