@@ -169,7 +169,7 @@
         "editor.semanticHighlighting.enabled": true,
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
-            "source.organizeImports": true,
+            "source.organizeImports": "explicit"
         },
     },
     "[rust]": {
@@ -177,15 +177,6 @@
         "editor.formatOnSave": true,
     },
     "rust-analyzer.check.command": "clippy",
-    "rust-analyzer.check.overrideCommand": [
-        "cargo",
-        "+nightly",
-        "clippy",
-        "-Zlints",
-        "--all-features",
-        "--all-targets",
-        "--message-format=json",
-    ],
     "rust-analyzer.rustfmt.extraArgs": [
         "+nightly",
     ],
@@ -339,7 +330,6 @@
     "evenBetterToml.semanticTokens": true,
     "gitlens.currentLine.enabled": false,
     "go.toolsManagement.autoUpdate": true,
-    "diffEditor.ignoreTrimWhitespace": false,
     "githubPullRequests.fileListLayout": "tree",
     "githubPullRequests.pullBranch": "never",
     "githubPullRequests.useReviewMode": {
@@ -360,4 +350,11 @@
     "evenBetterToml.formatter.arrayTrailingComma": true,
     "evenBetterToml.formatter.arrayAutoCollapse": true,
     "editor.minimap.autohide": true,
+    "githubPullRequests.terminalLinksHandler": "github",
+    "githubPullRequests.commentExpandState": "collapseAll",
+    "diffEditor.maxComputationTime": 0,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.experimental.showMoves": true,
+    "rust-analyzer.showRequestFailedErrorNotification": false,
+    "editor.formatOnSave": true,
 }
