@@ -6,8 +6,8 @@
 # is probably more reasonable, but for simplicity the backslashes with `column` work for right now
 sentinal="\\\\"
 
-git branch -v | \
-    awk -v sentinal=$sentinal '
+git branch -v |
+	awk -v sentinal=$sentinal '
         BEGIN {
             FPAT =  "([^ ]+)|(\\[.*\\])" 
         } 
@@ -16,6 +16,6 @@ git branch -v | \
 
         /gone|ahead|behind/ {
             print $3 ":" sentinal $1, sprintf("(%s)", $2) sentinal, substr($0, index($0, $4))
-        }' | \
-    sort | \
-    column -s $sentinal -t -n
+        }' |
+	sort |
+	column -s $sentinal -t -n
