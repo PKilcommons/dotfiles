@@ -6,6 +6,8 @@ alias gcd="git checkout"
 alias gshow="git show --quiet --stat --format=fuller"
 alias cback="cd ~-" # cd - > /dev/null would also work
 alias bat="bat --paging='always'"
+# For some reason SSH and tmux will sometimes not coordinate UTF-8 properly. This forces it.
+alias tmux="tmux -u"
 # Doesn't include --all-features to avoid testing compile heavy features in normal use
 alias nextest-slim="cargo nextest run"
 alias nextest="cargo nextest run --all-features"
