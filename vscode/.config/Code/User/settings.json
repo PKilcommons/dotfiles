@@ -84,7 +84,6 @@
     "window.customMenuBarAltFocus": false,
     "editor.detectIndentation": false, // Alt no longer toggles to the menubar, but it's still usable on hold
     "debug.allowBreakpointsEverywhere": true,
-    //"editor.inlayHints.enabled": "offUnlessPressed",
     "editor.inlayHints.enabled": "offUnlessPressed",
     "editor.inlayHints.fontFamily": "Consolas",
     "editor.inlayHints.fontSize": 11,
@@ -164,6 +163,10 @@
     ],
     "ruff.organizeImports": true,
     "ruff.importStrategy": "fromEnvironment",
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.variableTypes": true,
+    "python.analysis.inlayHints.pytestParameters": true,
+    // "python.analysis.inlayHints.callArgumentNames": true,
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.semanticHighlighting.enabled": true,
@@ -176,10 +179,19 @@
         "editor.defaultFormatter": "rust-lang.rust-analyzer",
         "editor.formatOnSave": true,
     },
+    "rust-analyzer.inlayHints.closureReturnTypeHints.enable": "always",
     "rust-analyzer.check.command": "clippy",
+    "rust-analyzer.cargo.features": "all",
+    // `true` by default, but in case this changes we want to be consistent with our `clippy` alias
+    "rust-analyzer.check.allTargets": true,
     "rust-analyzer.rustfmt.extraArgs": [
         "+nightly",
     ],
+    "rust-analyzer.typing.autoClosingAngleBrackets.enable": true,
+    "rust-analyzer.semanticHighlighting.operator.specialization.enable": true,
+    "rust-analyzer.semanticHighlighting.punctuation.separate.macro.bang": true,
+    "rust-analyzer.hover.actions.references.enable": true,
+    "rust-analyzer.showRequestFailedErrorNotification": false,
     // LSP highlighting
     // https://code.visualstudio.com/api/language-extensions/semantic-highlight-guide#standard-token-types-and-modifiers
     "editor.semanticTokenColorCustomizations": {
@@ -256,13 +268,6 @@
             }
         },
     },
-    "python.analysis.inlayHints.functionReturnTypes": true,
-    "python.analysis.inlayHints.variableTypes": true,
-    "python.analysis.inlayHints.pytestParameters": true,
-    // "python.analysis.inlayHints.callArgumentNames": true,
-    "rust-analyzer.typing.autoClosingAngleBrackets.enable": true,
-    "rust-analyzer.inlayHints.closureReturnTypeHints.enable": "always",
-    "rust-analyzer.cargo.features": "all",
     "BracketHighlighter.blurOpacity": "0.985",
     "BracketHighlighter.highlightScopeFromText": true,
     "BracketHighlighter.textColor": "",
@@ -340,9 +345,6 @@
     "githubPullRequests.defaultMergeMethod": "squash",
     "githubPullRequests.createDraft": true,
     "githubPullRequests.showPullRequestNumberInTree": true,
-    "rust-analyzer.hover.actions.references.enable": true,
-    "rust-analyzer.semanticHighlighting.operator.specialization.enable": true,
-    "rust-analyzer.semanticHighlighting.punctuation.separate.macro.bang": true,
     "window.commandCenter": false,
     "inlineSQL.dbPort": 5437,
     "inlineSQL.dbPassword": "secret",
@@ -355,6 +357,7 @@
     "diffEditor.maxComputationTime": 0,
     "diffEditor.ignoreTrimWhitespace": false,
     "diffEditor.experimental.showMoves": true,
-    "rust-analyzer.showRequestFailedErrorNotification": false,
     "editor.formatOnSave": true,
+    "terminal.integrated.enableBell": true,
 }
+
