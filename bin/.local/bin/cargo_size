@@ -1,5 +1,0 @@
-if test -d $CARGO_TARGET_DIR;
-    then du -sh $CARGO_TARGET_DIR | awk '{print $2 ": " $1}'
-else
-    printf "%s: 0.0B\n" "$CARGO_TARGET_DIR"
-fi

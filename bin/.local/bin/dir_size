@@ -1,0 +1,13 @@
+#!/bin/bash
+# Calculate a directory's size.
+
+set -e
+
+if test -d $1;
+    then pdu --json-output --max-depth=1 --no-sort $1 \
+        | jq .tree.data \
+        | numfmt --to=iec-i --suffix=B --format="%9.2f" \
+        | xargs printf "%s: %s\n" "$1"
+else
+    printf "%s: 0.0B\n" "$1"
+fi
