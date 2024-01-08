@@ -1,0 +1,6 @@
+#!/bin/bash
+# Return the amount of used memory by the system when the ZFS ARC is not accounted for.
+set -e
+
+arc=$(arc_size | tr -d "MB")
+printf "%.1f MB\n" $(free -m | awk -v arc=$arc 'FNR == 2 {print $3 - arc}')
