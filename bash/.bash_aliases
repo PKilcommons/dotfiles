@@ -4,6 +4,8 @@ alias gback="git checkout @{-1}"
 alias gb="git branch"
 alias gcd="git checkout"
 alias gshow="git show --quiet --stat --format=fuller"
+alias gpush="git stash"
+alias gpop="git stash pop"
 alias cback="cd ~-" # cd - > /dev/null would also work
 alias bat="bat --paging='always'"
 alias cargo_size="dir_size $CARGO_TARGET_DIR"
