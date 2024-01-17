@@ -12,6 +12,7 @@
 # For `git-delta`. See https://github.com/dandavison/delta
 [core]
     pager = delta
+    excludesfile = /home/gilgamesh/.gitignore
 [interactive]
     diffFilter = delta --color-only --features=interactive
 [delta]
