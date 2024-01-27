@@ -1,9 +1,12 @@
 alias gs="git status"
 alias gl="git log --stat --format=fuller"
 alias gback="git checkout @{-1}"
-alias gb="git branch"
+alias gb="git branch -vv"
 alias gcd="git checkout"
-alias gshow="git show --quiet --stat --format=fuller"
+# With diff
+alias gshow="git show --format=fuller"
+# Without diff
+alias gstat="git show --quiet --stat --format=fuller"
 alias gpush="git stash"
 alias gpop="git stash pop"
 alias cback="cd ~-" # cd - > /dev/null would also work
