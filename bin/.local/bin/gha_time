@@ -1,4 +1,8 @@
 #!/bin/bash
+# Show the number of Github Action minutes used in billing period based on the
+# PAT provided in the `$ORG_GH_PAT` environmental variable.
+
+set -e
 
 resp=$(
     curl -L \

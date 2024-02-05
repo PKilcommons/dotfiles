@@ -1,1 +1,6 @@
+#!/bin/bash
+# Display additional about one or more processes based on their PIDs.
+
+set -e
+
 ps -o pid,vsz=MEMORY -o user,group=GROUP -o comm,args=ARGS -p $@
