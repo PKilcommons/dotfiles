@@ -1,0 +1,5 @@
+#!/bin/bash
+# Print amount of memory used by the `rust-analyzer` LSP.
+set -e
+
+pgrep rust-analyzer | xargs check_pid | awk 'FNR > 1 {sum += $2} END {printf("%.1f MB\n", sum/1024)}'
