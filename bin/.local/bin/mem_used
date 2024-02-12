@@ -3,4 +3,4 @@
 set -e
 
 arc=$(arc_size | tr -d "MB")
-printf "%.1f MB\n" $(free -m | awk -v arc=$arc 'FNR == 2 {print $3 - arc}')
+free -m | awk -v arc=$arc 'FNR == 2 {printf "%.1f MB\n", $3 - arc}'
