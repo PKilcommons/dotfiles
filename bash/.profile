@@ -32,7 +32,7 @@ export PATH=$PATH:$GOPATH/bin
 export PATH="$HOME/neovim/bin:$PATH"
 
 # Custom env vars
-export PIPX_DEFAULT_PYTHON=python3.11
+export PIPX_DEFAULT_PYTHON=python3.12
 export HATCH_PYTHON=$PIPX_DEFAULT_PYTHON
 export CARGO_TARGET_DIR=$HOME/.cargo-target
 export RUST_BACKTRACE=1
