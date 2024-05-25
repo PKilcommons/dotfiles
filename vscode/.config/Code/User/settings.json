@@ -155,23 +155,8 @@
     "Prettier-SQL.SQLFlavourOverride": "postgresql",
     "Prettier-SQL.tabSizeOverride": 4,
     "Prettier-SQL.tabulateAlias": true,
+    "typos.config": "pyproject.toml",
     "Prettier-SQL.keywordCase": "upper",
-    "black-formatter.args": [
-        "--config",
-        "pyproject.toml"
-    ],
-    "ruff.lint.args": [
-        "--config",
-        "pyproject.toml",
-        // When looking at stdlib source VSCode will follow the symlink into the system Python directory which isn't in
-        // ruff's ignore list
-        "--extend-exclude=/usr/lib/python*/*.py",
-        "--extend-exclude=/usr/lib/python*/*.pyi",
-        "--extend-exclude=/home/gilgamesh/.vscode-server/**/*.py",
-        "--extend-exclude=/home/gilgamesh/.vscode-server/**/*.pyi",
-    ],
-    "ruff.organizeImports": true,
-    "ruff.importStrategy": "fromEnvironment",
     "python.analysis.ignore": [
         ".venv/**/*.py",
         ".venv/**/*.pyi",
@@ -186,8 +171,21 @@
     "python.analysis.inlayHints.variableTypes": true,
     "python.analysis.inlayHints.pytestParameters": true,
     // "python.analysis.inlayHints.callArgumentNames": true,
+    "ruff.lint.args": [
+        "--config",
+        "pyproject.toml",
+        // When looking at stdlib source VSCode will follow the symlink into the system Python directory which isn't in
+        // ruff's ignore list
+        "--extend-exclude=/usr/lib/python*/*.py",
+        "--extend-exclude=/usr/lib/python*/*.pyi",
+        "--extend-exclude=/home/gilgamesh/.vscode-server/**/*.py",
+        "--extend-exclude=/home/gilgamesh/.vscode-server/**/*.pyi",
+    ],
+    "ruff.organizeImports": true,
+    "ruff.importStrategy": "fromEnvironment",
+    "ruff.ignoreStandardLibrary": true,
     "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.defaultFormatter": "charliermarsh.ruff",
         "editor.semanticHighlighting.enabled": true,
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
