@@ -39,3 +39,4 @@ export RUST_BACKTRACE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export ORG_GH_PAT=$(< $HOME/.github/org_pat)
 export GCI_PAT=$(< $HOME/.github/gci_pat)
+export KUBECONFIG=$HOME/.kube/config
