@@ -1,18 +1,18 @@
 [user]
     email = patrick.kilcommons@transigma.com
     name = PKilcommons
-    signingkey = /home/gilgamesh/.ssh/id_ed25519_github.pub
+    # On different machines this should be a different key but using the same naming convention.
+    # When using a different git host for certain projects (e.g. Gitlab), this should be set on the repo `.git/config`
+    signingkey = ~/.ssh/id_ed25519_github.pub
 [color]
     ui = auto
-[core]
-    editor = $HOME/neovim/bin/nvim
 [status]
     showStash = true
 
 # For `git-delta`. See https://github.com/dandavison/delta
 [core]
     pager = delta
-    excludesfile = /home/gilgamesh/.gitignore
+    excludesfile = ~/.gitignore
 [interactive]
     diffFilter = delta --color-only --features=interactive
 [delta]

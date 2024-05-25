@@ -56,6 +56,8 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+source "$HOME/.git-prompt.sh" || printf 'Download from "https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh" if missing\n'
+
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[38;5;85m\]$(__git_ps1 " (%s)")\[\033[00m\]\$ '
 else
@@ -128,8 +130,7 @@ if ! shopt -oq posix; then
 fi
 . "$HOME/.cargo/env"
 
-# Start `ssh-agent`, load specified SSH keys. See `man keychain` for more details.
-eval $(keychain --clear --eval id_ed25519_github 2> /dev/null)
+source $HOME/.ssh/start_keychain.sh
 
 # tere requires this function to run `cd` when it exits
 tere() {

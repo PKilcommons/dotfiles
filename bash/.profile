@@ -31,12 +31,15 @@ export GOPATH=$(go env GOPATH)
 export PATH=$PATH:$GOPATH/bin
 export PATH="$HOME/neovim/bin:$PATH"
 
-# Custom env vars
+# Conventional env vars
+export EDITOR=$(which nvim)
 export PIPX_DEFAULT_PYTHON=python3.12
 export HATCH_PYTHON=$PIPX_DEFAULT_PYTHON
 export CARGO_TARGET_DIR=$HOME/.cargo-target
 export RUST_BACKTRACE=1
+export KUBECONFIG=$HOME/.kube/config
 export GIT_PS1_SHOWSTASHSTATE=1
+
+# Custom env vars
 export ORG_GH_PAT=$(< $HOME/.github/org_pat)
 export GCI_PAT=$(< $HOME/.github/gci_pat)
-export KUBECONFIG=$HOME/.kube/config
