@@ -1,0 +1,8 @@
+[user]
+name = "PKilcommons"
+email = "patrick.kilcommons@transigma.com"
+
+[ui]
+pager = "delta"
+[ui.diff]
+format = "git"
