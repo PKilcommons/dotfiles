@@ -1,15 +1,23 @@
 alias gs="git status"
+alias js="jj st"
 alias gl="git log --stat --format=fuller"
+alias jol="jj evolog"
 alias gback="git checkout @{-1}"
 alias gb="git branch -vv"
 alias gcd="git checkout"
+alias jcd="jj new -r"
 # With diff
 alias gshow="git show --format=fuller"
+alias jshow="jj show"
 # Without diff
 alias gstat="git show --quiet --stat --format=fuller"
+alias jstat="jj show --stat"
+alias gsum="git show --summary"
+alias jsum="jj show --summary"
 alias gpush="git stash"
 alias gpop="git stash pop"
 alias cback="cd ~-" # cd - > /dev/null would also work
+alias kctl="kubectl"
 alias bat="bat --paging='always'"
 alias cargo_size="dir_size $CARGO_TARGET_DIR"
 # For some reason SSH and tmux will sometimes not coordinate UTF-8 properly. This forces it.

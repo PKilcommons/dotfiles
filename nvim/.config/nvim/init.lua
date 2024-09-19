@@ -392,7 +392,7 @@ vim.opt.colorcolumn = "120"
 -- Reduce column length in `git commit` to the conventional limit
 vim.api.nvim_create_autocmd(
     "FileType", {
-      pattern = "gitcommit",
+      pattern = {"gitcommit", "jjdescription"},
       command = "set textwidth=72 | set colorcolumn=73",
     }
 )

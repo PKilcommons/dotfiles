@@ -2,7 +2,26 @@
 name = "PKilcommons"
 email = "patrick.kilcommons@transigma.com"
 
+[signing]
+sign-all = true
+backend = "ssh"
+key = "~/.ssh/id_ed25519_github.pub"
+
 [ui]
 pager = "delta"
+default-command = "log"
 [ui.diff]
 format = "git"
+
+[aliases]
+where = ['log', '--no-graph', '-r', '@', '-T', 'format_short_id(change_id)']
+track = ["file", "track"]
+
+[revset-aliases]
+# All commits and descendents which have not been upstreamed
+'pending()' = 'remote_bookmarks(remote=origin)..@'
+# Empty commits which aren't merge commits, the root commit, or the working copy
+'null()' = 'empty() ~ merges() ~ root() ~ @'
+
+[snapshot]
+auto-track = "none()"
