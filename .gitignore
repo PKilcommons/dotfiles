@@ -1,1 +1,5 @@
 **/lazy-lock.json
+# This is always generated, but we use `fish/conf.d` instead
+fish/.config/fish/config.fish
+# This file is really only relevant for the current system
+fish/.config/fish/fish_variables
