@@ -32,6 +32,7 @@ export PATH=$PATH:$GOPATH/bin
 export PATH="$HOME/neovim/bin:$PATH"
 
 # Conventional env vars
+export LANG="en_US.UTF-8"
 export EDITOR=$(which nvim)
 export PIPX_DEFAULT_PYTHON=python3.12
 export HATCH_PYTHON=$PIPX_DEFAULT_PYTHON
