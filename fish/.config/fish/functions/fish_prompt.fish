@@ -5,16 +5,44 @@ function fish_prompt
         set stat (set_color brred -o) "($last_status) " (set_color normal)
     end
 
-    if set -q $PROJECT_WORKSPACE
-        # TODO: Do the shrinking: `./hivo-app`
-        # https://fishshell.com/docs/current/cmds/path.html
-        set rel_path "TODO"
+    set -l display_pwd (prompt_pwd -d 3 -D 4)
+
+
+    if set -q PROJECT_WORKSPACE
+        set rel_path (_truncate_workspace; or echo $display_pwd)
     else
-        set rel_path (prompt_pwd -d 3 -D 4)
+        set rel_path $display_pwd
     end
 
     string join '' -- \
         $stat \
         '[' (date +%H:%M:%S) '] ' \
         (prompt_login) (set_color blue -o) ':' $rel_path (set_color normal) (vcs_prompt) '$ '
+end
+
+function _truncate_workspace
+    set -f truncated (string join '/' -- '.' (basename -- "$PROJECT_WORKSPACE"))
+    if [ "$PWD" = "$PROJECT_WORKSPACE" ]
+        echo $truncated
+        return 0
+    end
+
+    set -l arr_pwd (string split -- "/" "$PWD")
+    set -l arr_workspace (string split -- "/" "$PROJECT_WORKSPACE")
+    set -l loop_len (math max (count $arr_pwd), (count $arr_workspace))
+
+    for i in (seq $loop_len)
+        if [ "$arr_workspace[$i]" != "$arr_pwd[$i]" ]
+            # If the two arrays start disagreeing, and it's because the workspace has exhausted its paths (returning
+            # empty), then we start appending the PWD directories ...
+            if [ -z $arr_workspace[$i] ]
+                set -f truncated (string join '/' -- "$truncated" "$arr_pwd[$i]")
+            # ... Otherwise, it's because the PWD and workspace do not have a common ancestor, in which case we use a
+            # non-truncated PWD.
+            else
+                return 1
+            end
+        end
+    end
+    echo $truncated
 end
