@@ -7,6 +7,9 @@ fish_add_path (go env GOPATH)
 fish_add_path "$GOPATH/bin"
 fish_add_path "$HOME/neovim/bin"
 
+# Fish specific
+set -gx fish_greeting # Empty greeting
+
 # Conventional env
 set -gx LANG en_US.UTF-8
 set -gx EDITOR (which nvim)
