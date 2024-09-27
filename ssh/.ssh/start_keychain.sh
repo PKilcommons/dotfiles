@@ -7,6 +7,8 @@
 #
 # This should be the private key's name. `keychain` assumes the public key is in the same directory and has the
 # filename except with the `.pub` extension.
+SHELL="/bin/bash"
+
 keys[0]="id_ed25519_github"
 # keys[1]="..."
 
