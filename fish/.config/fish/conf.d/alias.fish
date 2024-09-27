@@ -1,7 +1,7 @@
 alias ll="ls -alF"
 alias la="ls -A"
 alias gs="git status"
-alias js="jj st"
+alias jl="jj log"
 alias gl="git log --stat --format=fuller"
 alias jol="jj evolog"
 alias gback="git checkout @{-1}"

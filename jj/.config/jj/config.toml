@@ -9,12 +9,13 @@ key = "~/.ssh/id_ed25519_github.pub"
 
 [ui]
 pager = "delta"
-default-command = "log"
+default-command = "status"
 [ui.diff]
 format = "git"
 
 [aliases]
-where = ['log', '--no-graph', '-r', '@', '-T', 'format_short_id(change_id)']
+where = ['log', '--no-graph', '-n', '1', '-T', 'format_short_id(change_id)']
+pending = ['log', '-r', 'master::pending()']
 track = ["file", "track"]
 
 [revset-aliases]

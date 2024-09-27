@@ -2,7 +2,7 @@ function jj_prompt
     jj st --ignore-working-copy &> /dev/null; or return 1
 
     set -l bookmark
-    jj log --ignore-working-copy --no-graph -r @ -T 'bookmarks.map(|b| b.name()).join(",")' \
+    jj log --ignore-working-copy --no-graph -r @- -T 'bookmarks.map(|b| b.name()).join(",")' \
         | string split ',' \
         | read -l bookmark
 
@@ -12,7 +12,7 @@ function jj_prompt
         echo " ($bookmark)"
         set_color normal
     else
-        string join '' -- (set_color AE81FF) " (" $(jj where --ignore-working-copy --color always) \
+        string join '' -- (set_color AE81FF) " (" $(jj where -r @- --ignore-working-copy --color always) \
         (set_color AE81FF) ")" (set_color normal)
     end
 end
