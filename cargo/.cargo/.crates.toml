@@ -23,7 +23,6 @@
     "flamegraph",
 ]
 "hyperfine 1.17.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["hyperfine"]
-"jj-cli 0.13.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["jj"]
 "just 1.14.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["just"]
 "opis 0.4.0 (path+file:///home/gilgamesh/projects/hivo-app/opis)" = ["opis"]
 "parallel-disk-usage 0.9.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["pdu"]
@@ -34,3 +33,4 @@
 "cargo-nextest 0.9.78 (registry+https://github.com/rust-lang/crates.io-index)" = ["cargo-nextest"]
 "git-delta 0.18.2 (registry+https://github.com/rust-lang/crates.io-index)" = ["delta"]
 "fd-find 10.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["fd"]
+"jj-cli 0.22.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["jj"]
