@@ -18,11 +18,15 @@ where = ['log', '--no-graph', '-n', '1', '-T', 'format_short_id(change_id)']
 pending = ['log', '-r', 'master::pending()']
 track = ["file", "track"]
 
+[revsets]
+# Like the standard default except common ancestors are displayed instead of being ellided after 2 ancestors
+log = '(present(@) | ancestors(immutable_heads().., 2) | trunk())::(visible_heads() & ~untracked_remote_bookmarks())'
+
 [revset-aliases]
 # All commits and descendents which have not been upstreamed
-'pending()' = 'remote_bookmarks(remote=origin)..@'
+"pending()" = 'remote_bookmarks(remote=origin)..@'
 # Empty commits which aren't merge commits, the root commit, or the working copy
-'null()' = 'empty() ~ merges() ~ root() ~ @'
+"null()" = 'empty() ~ merges() ~ root() ~ @'
 
 [snapshot]
 auto-track = "none()"
