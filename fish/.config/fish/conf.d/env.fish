@@ -3,22 +3,29 @@ fish_add_path "$HOME/bin"
 fish_add_path "$HOME/.local/bin"
 fish_add_path "$HOME/.cargo/bin"
 fish_add_path "/usr/local/go/bin"
-fish_add_path (go env GOPATH)
-fish_add_path "$GOPATH/bin"
 fish_add_path "$HOME/neovim/bin"
+if command -q go
+    fish_add_path (go env GOPATH)
+    fish_add_path "$GOPATH/bin"
+end
 
 # Fish specific
 set -gx fish_greeting # Empty greeting
 
 # Conventional env
 set -gx LANG en_US.UTF-8
-set -gx EDITOR (which nvim)
 set -gx PIPX_DEFAULT_PYTHON python3.12
 set -gx HATCH_PYTHON $PIPX_DEFAULT_PYTHON
 set -gx CARGO_TARGET_DIR "$HOME/.cargo-target"
 set -gx RUST_BACKTRACE 1
 set -gx KUBECONFIG "$HOME/.kube/config"
 set -gx GIT_PS1_SHOWSTASHSTATE 1
+
+if command -q nvim
+    set -gx EDITOR (which nvim)
+else if command -q vim
+    set -gx EDITOR (which vim)
+end
 
 # Custom env
 if [ -f "$HOME/.github/org_pat" ]

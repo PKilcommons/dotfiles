@@ -1,4 +1,9 @@
 function jj_prompt
+    # Early exit if `jj` is not in PATH
+    if not command -q jj
+        return 1
+    end
+
     jj st --ignore-working-copy &> /dev/null; or return 1
 
     set -l bookmark
