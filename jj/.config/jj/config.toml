@@ -28,6 +28,7 @@ log = '(present(@) | ancestors(immutable_heads().., 2) | trunk())::(visible_head
 "pending()" = 'remote_bookmarks(remote=origin)..@'
 # Empty commits which aren't merge commits, the root commit, or the working copy
 "null()" = 'empty() ~ merges() ~ root() ~ @'
+"desc(pattern)" = 'description(pattern)'
 
 [snapshot]
 auto-track = "none()"
