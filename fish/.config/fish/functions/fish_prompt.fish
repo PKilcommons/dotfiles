@@ -15,9 +15,17 @@ function fish_prompt
     end
 
     string join '' -- \
+        # "(1)" (assuming exit code 1)
         $stat \
-        '[' (date +%H:%M:%S) '] ' \
-        (prompt_login) (set_color blue -o) ':' $rel_path (set_color normal) (vcs_prompt) '$ '
+        # "[12:30:12]"
+        (set_color white -d) '[' (date +%H:%M:%S) '] ' (set_color normal) \
+        # "username@hostname"
+        (prompt_login) \
+        # "~/foo/bar"
+        (set_color blue -o) ':' $rel_path (set_color normal) \
+        # "(master)"
+        (vcs_prompt) \
+        '$ '
 end
 
 function _truncate_workspace
