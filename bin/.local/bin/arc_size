@@ -3,4 +3,10 @@
 
 set -e
 
-awk '/^size/ { print $3 / 1048576 " MB"}' < /proc/spl/kstat/zfs/arcstats
+arc_file="/proc/spl/kstat/zfs/arcstats"
+if [[ -f $arc_file ]]; then
+    awk '/^size/ { print $3 / 1048576 " MB"}' < $arc_file
+else
+    echo -e "\u001B[1m\u001B[31mError:\u001B[39m\u001B[22m ZFS not installed."
+    exit 1
+fi
