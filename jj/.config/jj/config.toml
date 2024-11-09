@@ -17,6 +17,7 @@ format = "git"
 where = ['log', '--no-graph', '-n', '1', '-T', 'format_short_id(change_id)']
 pending = ['log', '-r', 'master::pending()']
 track = ["file", "track"]
+blame = ["file", "annotate"]
 
 [revsets]
 # Like the standard default except common ancestors are displayed instead of being ellided after 2 ancestors
