@@ -3,7 +3,7 @@ fish_add_path "$HOME/bin"
 fish_add_path "$HOME/.local/bin"
 fish_add_path "$HOME/.cargo/bin"
 fish_add_path "/usr/local/go/bin"
-fish_add_path "$HOME/neovim/bin"
+fish_add_path "$HOME/.local/neovim/bin"
 if command -q go
     fish_add_path (go env GOPATH)
     fish_add_path "$GOPATH/bin"
