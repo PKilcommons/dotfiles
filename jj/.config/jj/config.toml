@@ -10,6 +10,7 @@ key = "~/.ssh/id_ed25519_github.pub"
 [ui]
 pager = "delta"
 default-command = "status"
+conflict-marker-style = "git"
 [ui.diff]
 format = "git"
 

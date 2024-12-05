@@ -33,4 +33,4 @@
 "tokei 12.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = ["tokei"]
 "typos-cli 1.21.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["typos"]
 "wthrr 1.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = ["wthrr"]
-"jj-cli 0.23.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["jj"]
+"jj-cli 0.24.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["jj"]
