@@ -1,0 +1,9 @@
+#!/bin/bash
+# Get the temperature of a Mellanox NIC.
+#
+# Requires root.
+
+# Use `mst status` to determine the device
+DEV="/dev/mst/mt4099_pci_cr0"
+
+mget_temp -d $DEV | tr -d "[:space:]" | awk '{print $0 "C"}'
