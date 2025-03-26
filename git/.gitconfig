@@ -1,5 +1,5 @@
 [user]
-    email = patrick.kilcommons@transigma.com
+    email = pmkilcommons@gmail.com
     name = PKilcommons
     # On different machines this should be a different key but using the same naming convention.
     # When using a different git host for certain projects (e.g. Gitlab), this should be set on the repo `.git/config`

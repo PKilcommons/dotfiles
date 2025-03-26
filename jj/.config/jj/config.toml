@@ -1,9 +1,9 @@
 [user]
 name = "PKilcommons"
-email = "patrick.kilcommons@transigma.com"
+email = "pmkilcommons@gmail.com"
 
 [signing]
-sign-all = true
+behavior = "own"
 backend = "ssh"
 key = "~/.ssh/id_ed25519_github.pub"
 
