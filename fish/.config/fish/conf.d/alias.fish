@@ -24,7 +24,7 @@ alias bat="bat --paging='always'"
 alias cargo_size="dir_size $CARGO_TARGET_DIR"
 # For some reason SSH and tmux will sometimes not coordinate UTF-8 properly. This forces it.
 alias tmux="tmux -u"
-alias pyenv='eval $(pdm venv activate)'
+alias pyenv='source .venv/bin/activate.fish'
 alias pyfmt='ruff format'
 # Doesn't include --all-features to avoid testing compile heavy features in normal use
 alias nextest-slim="cargo nextest run"
