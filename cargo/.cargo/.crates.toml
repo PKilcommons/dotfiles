@@ -21,7 +21,6 @@
 ]
 "git-delta 0.18.2 (registry+https://github.com/rust-lang/crates.io-index)" = ["delta"]
 "hyperfine 1.17.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["hyperfine"]
-"just 1.14.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["just"]
 "opis 0.4.0 (path+file:///home/gilgamesh/projects/hivo-app/opis)" = ["opis"]
 "parallel-disk-usage 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["pdu"]
 "tere 1.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["tere"]
@@ -34,3 +33,4 @@
 ]
 "cargo-binstall 1.12.3 (registry+https://github.com/rust-lang/crates.io-index)" = ["cargo-binstall"]
 "jj-cli 0.28.2 (registry+https://github.com/rust-lang/crates.io-index)" = ["jj"]
+"just 1.40.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["just"]
