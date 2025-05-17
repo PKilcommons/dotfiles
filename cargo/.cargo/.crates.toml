@@ -1,6 +1,7 @@
 [v1]
 "bat 0.24.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["bat"]
 "cargo-audit 0.17.6 (registry+https://github.com/rust-lang/crates.io-index)" = ["cargo-audit"]
+"cargo-binstall 1.12.3 (registry+https://github.com/rust-lang/crates.io-index)" = ["cargo-binstall"]
 "cargo-cache 0.8.3 (registry+https://github.com/rust-lang/crates.io-index)" = ["cargo-cache"]
 "cargo-depgraph 1.5.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["cargo-depgraph"]
 "cargo-expand 1.0.79 (registry+https://github.com/rust-lang/crates.io-index)" = ["cargo-expand"]
@@ -11,6 +12,10 @@
 "cargo-nextest 0.9.78 (registry+https://github.com/rust-lang/crates.io-index)" = ["cargo-nextest"]
 "cargo-sort 1.0.9 (registry+https://github.com/rust-lang/crates.io-index)" = ["cargo-sort"]
 "cargo-unused-features 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["unused-features"]
+"cargo-update 16.3.0 (registry+https://github.com/rust-lang/crates.io-index)" = [
+    "cargo-install-update",
+    "cargo-install-update-config",
+]
 "cargo-watch 8.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["cargo-watch"]
 "erdtree 3.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = ["erd"]
 "evcxr_repl 0.15.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["evcxr"]
@@ -21,16 +26,12 @@
 ]
 "git-delta 0.18.2 (registry+https://github.com/rust-lang/crates.io-index)" = ["delta"]
 "hyperfine 1.17.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["hyperfine"]
+"jj-cli 0.28.2 (registry+https://github.com/rust-lang/crates.io-index)" = ["jj"]
+"just 1.40.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["just"]
 "opis 0.4.0 (path+file:///home/gilgamesh/projects/hivo-app/opis)" = ["opis"]
 "parallel-disk-usage 0.10.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["pdu"]
 "tere 1.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["tere"]
 "tokei 12.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = ["tokei"]
 "typos-cli 1.21.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["typos"]
 "wthrr 1.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = ["wthrr"]
-"cargo-update 16.3.0 (registry+https://github.com/rust-lang/crates.io-index)" = [
-    "cargo-install-update",
-    "cargo-install-update-config",
-]
-"cargo-binstall 1.12.3 (registry+https://github.com/rust-lang/crates.io-index)" = ["cargo-binstall"]
-"jj-cli 0.28.2 (registry+https://github.com/rust-lang/crates.io-index)" = ["jj"]
-"just 1.40.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["just"]
+"fclones 0.35.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["fclones"]
