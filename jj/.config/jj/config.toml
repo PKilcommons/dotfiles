@@ -34,5 +34,8 @@ log = '(present(@) | ancestors(immutable_heads().., 2) | trunk())::(visible_head
 "null()" = 'empty() ~ merges() ~ root() ~ @'
 "desc(pattern)" = 'description(pattern)'
 
+[template-aliases]
+"bookmark_list" = 'bookmarks.map(|b| b.name()).join(",")'
+
 [snapshot]
 auto-track = "none()"

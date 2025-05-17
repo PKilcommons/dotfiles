@@ -7,7 +7,7 @@ function jj_prompt
     jj st --ignore-working-copy &> /dev/null; or return 1
 
     set -l bookmark
-    jj log --ignore-working-copy --no-graph -r @- -T 'bookmarks.map(|b| b.name()).join(",")' \
+    jj log --ignore-working-copy --no-graph -r @- -T bookmark_list \
         | string split ',' \
         | read -l bookmark
 
