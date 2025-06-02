@@ -1,4 +1,20 @@
-alias ll="ls -alF"
+function ls
+    if command -q lsd
+        lsd --header $argv
+    else
+        command ls --color=auto $argv
+    end
+end
+
+function tree
+    if command -q lsd
+        lsd --tree -F $argv
+    else
+        command tree $argv
+    end
+end
+
+alias ll="ls -AlF"
 alias la="ls -A"
 alias gs="git status"
 alias jl="jj log"

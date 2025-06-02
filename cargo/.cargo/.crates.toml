@@ -19,6 +19,7 @@
 "cargo-watch 8.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["cargo-watch"]
 "erdtree 3.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = ["erd"]
 "evcxr_repl 0.15.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["evcxr"]
+"fclones 0.35.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["fclones"]
 "fd-find 10.2.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["fd"]
 "flamegraph 0.6.3 (registry+https://github.com/rust-lang/crates.io-index)" = [
     "cargo-flamegraph",
@@ -34,4 +35,4 @@
 "tokei 12.1.2 (registry+https://github.com/rust-lang/crates.io-index)" = ["tokei"]
 "typos-cli 1.21.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["typos"]
 "wthrr 1.1.1 (registry+https://github.com/rust-lang/crates.io-index)" = ["wthrr"]
-"fclones 0.35.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["fclones"]
+"lsd 1.1.5 (registry+https://github.com/rust-lang/crates.io-index)" = ["lsd"]
