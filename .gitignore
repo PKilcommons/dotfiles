@@ -3,3 +3,6 @@
 fish/.config/fish/config.fish
 # This file is really only relevant for the current system
 fish/.config/fish/fish_variables
+# These are auto generated and do not need to be tracked
+fish/.config/fish/completions/jj.fish
+fish/.config/fish/completions/uv.fish
