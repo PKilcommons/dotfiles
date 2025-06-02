@@ -1,0 +1,3 @@
+[submodule "fonts/consolas-nf"]
+	path = fonts/consolas-nf
+	url = https://github.com/ongyx/consolas-nf
