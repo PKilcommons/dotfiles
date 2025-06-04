@@ -1,0 +1,3 @@
+command = "tmux new -ADs ghostty"
+theme = "Monokai Classic"
+shell-integration = fish
