@@ -11,8 +11,7 @@ key = "~/.ssh/id_ed25519_github.pub"
 pager = "delta"
 default-command = "status"
 conflict-marker-style = "git"
-[ui.diff]
-format = "git"
+diff-formatter = ":git"
 
 [aliases]
 where = ['log', '--no-graph', '-n', '1', '-T', 'format_short_id(change_id)']
