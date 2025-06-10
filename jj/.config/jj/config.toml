@@ -8,7 +8,7 @@ backend = "ssh"
 key = "~/.ssh/id_ed25519_github.pub"
 
 [ui]
-pager = "delta"
+pager = ":builtin"
 default-command = "status"
 conflict-marker-style = "git"
 diff-formatter = ":git"
@@ -41,3 +41,8 @@ log = '(present(@) | ancestors(immutable_heads().., 2) | trunk())::(visible_head
 
 [snapshot]
 auto-track = "none()"
+
+[[--scope]]
+--when.commands = ["diff", "show"]
+[--scope.ui]
+pager = "delta"
