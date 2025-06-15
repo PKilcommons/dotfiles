@@ -1,4 +1,4 @@
-set -l COMP_PATH "$HOME/.config/fish/completions"
+set -l COMP_PATH "$HOME/.local/share/fish/vendor_completions.d"
 mkdir -p $COMP_PATH
 
 if command -q jj
