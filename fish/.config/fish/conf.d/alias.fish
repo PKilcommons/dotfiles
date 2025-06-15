@@ -14,6 +14,17 @@ function tree
     end
 end
 
+function cd
+    if command -q zoxide
+        z $argv
+    else
+        # See https://github.com/fish-shell/fish-shell/issues/10109#issuecomment-1817756788
+        builtin cd $argv
+    end
+end
+
+alias cdf="zi"
+alias cback="cd -"
 alias ll="ls -AlF"
 alias la="ls -A"
 alias gs="git status"
@@ -34,7 +45,6 @@ alias gsum="git show --summary"
 alias jsum="jj show --summary"
 alias gpush="git stash"
 alias gpop="git stash pop"
-alias cback="cd -"
 alias kctl="kubectl"
 alias bat="bat --paging='always'"
 alias cargo_size="dir_size $CARGO_TARGET_DIR"
