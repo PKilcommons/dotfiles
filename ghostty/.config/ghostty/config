@@ -1,3 +1,4 @@
 command = "tmux new -ADs ghostty"
 theme = "Monokai Classic"
 shell-integration = fish
+font-family = "Consolas Nerd Font Mono"
