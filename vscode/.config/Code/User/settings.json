@@ -12,56 +12,12 @@
         "-workbench.action.terminal.paste"
     ],
     "remote.SSH.configFile": "C:\\Users\\Patrick\\.ssh\\config",
-    "python.languageServer": "Pylance",
     "files.trimTrailingWhitespace": true,
     "debug.onTaskErrors": "showErrors",
     "hexeditor.columnWidth": 16,
     "hexeditor.showDecodedText": true,
     "hexeditor.defaultEndianness": "little",
     "hexeditor.inspectorType": "aside",
-    "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "always",
-    "rust-analyzer.inlayHints.lifetimeElisionHints.useParameterNames": true,
-    "cSpell.userWords": [
-        "agnostically",
-        "argparse",
-        "cleanup",
-        "dataframes",
-        "datatype",
-        "datatypes",
-        "dtype",
-        "dtypes",
-        "duckdb",
-        "initdb",
-        "linters",
-        "meltano",
-        "nosql",
-        "olap",
-        "pipx",
-        "pyenv",
-        "pyproject",
-        "pytest",
-        "RDBMSs",
-        "serialised",
-        "setuputils",
-        "sqitch",
-        "supersedence",
-        "TIMESTAMPTZ",
-        "undescriptive",
-        "venv",
-        "venvs",
-        "virtualenv",
-        "sqlfluff",
-        "sqlfmt",
-    ],
-    "cSpell.language": "en-GB",
-    "cSpell.enableFiletypes": [
-        "!cpp",
-        "!go",
-        "!json",
-        "!jsonc",
-        "!python",
-        "!rust",
-    ],
     "svg.preview.mode": "svg",
     "files.trimFinalNewlines": true,
     "files.insertFinalNewline": true,
@@ -72,30 +28,125 @@
     "terminal.integrated.profiles.linux": {
         "tmux": {
             "path": "bash",
-            // Use `-e` on 3.2 to pass env vars at creation. For now these are manually set after session creation.
-            // For the time being, this will set the env then trigger the export it on connection.
             "args": [
                 "-c",
-                "tmux new -ADs vscode-${PWD##*/} \\; setenv PROJECT_WORKSPACE ${workspaceFolder} \\; setenv PYTHONPATH ${workspaceFolder} \\; send-keys -t 1 'export PROJECT_WORKSPACE=${workspaceFolder}; export PYTHONPATH=${workspaceFolder}; source $HOME/.bashrc' C-m"
+                "tmux new -ADs vscode-${PWD##*/} \\; setenv PROJECT_WORKSPACE ${workspaceFolder}"
             ],
             "icon": "vm",
             "color": "terminal.ansiCyan"
-        },
+        }
     },
     "terminal.integrated.defaultProfile.linux": "tmux",
-    "terminal.integrated.fontFamily": "Consolas NF",
-    "workbench.iconTheme": "eq-material-theme-icons-ocean",
-    "todo-tree.tree.flat": true,
-    "todo-tree.tree.showCountsInTree": true,
-    "todo-tree.tree.buttons.export": true,
-    "todo-tree.tree.buttons.groupByTag": false,
+    "terminal.integrated.fontFamily": "Consolas Nerd Font Mono",
+
+
     "window.titleBarStyle": "custom",
     "window.enableMenuBarMnemonics": false,
     "window.customMenuBarAltFocus": false, // Alt no longer toggles to the menubar, but it's still usable on hold
     "debug.allowBreakpointsEverywhere": true,
+
+    "Prettier-SQL.commaPosition": "before",
+    "Prettier-SQL.SQLFlavourOverride": "postgresql",
+    "Prettier-SQL.tabSizeOverride": 4,
+    "Prettier-SQL.tabulateAlias": true,
+    "Prettier-SQL.keywordCase": "upper",
+
+    // todo-tree
+    "todo-tree.tree.flat": true,
+    "todo-tree.tree.showCountsInTree": true,
+    "todo-tree.tree.buttons.export": true,
+    "todo-tree.tree.buttons.groupByTag": false,
+    "todo-tree.highlights.defaultHighlight": {
+        "foreground": "#F92472",
+        "opacity": 0,
+        "type": "tag-and-comment"
+    },
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "XXX",
+        "[ ]",
+        "[x]",
+        "NOTE",
+        "SAFETY"
+    ],
+
+    // Python
+    "python.languageServer": "Pylance",
+    "python.analysis.autoFormatStrings": true,
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.diagnosticMode": "workspace",
+
+    "python.analysis.exclude": [
+        // When looking at stdlib source VSCode will follow the symlink into the system Python directory which isn't in
+        // Pyrights' ignore list
+        "/usr/lib/python*/*.py",
+        "/usr/lib/python*/*.pyi",
+        "/home/gilgamesh/.vscode-server/**/*.py",
+        "/home/gilgamesh/.vscode-server/**/*.pyi",
+    ],
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.semanticHighlighting.enabled": true,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+    },
+
+    // dbt
+    "[jinja-sql]": {
+        "editor.defaultFormatter": "innoverio.vscode-dbt-power-user",
+        "editor.formatOnSave": true
+    },
+
+    // Go
+    "[go]": {
+        "editor.formatOnSave": true
+    },
+    "go.formatTool": "gofmt",
+    "gopls": {
+        "ui.semanticTokens": true
+    },
+
+    // Rust
+    "[rust]": {
+        "editor.defaultFormatter": "rust-lang.rust-analyzer",
+        "editor.formatOnSave": true,
+    },
+    "rust-analyzer.check.command": "clippy",
+    "rust-analyzer.cargo.features": "all",
+    // `true` by default, but in case this changes we want to be consistent with our `clippy` alias
+    "rust-analyzer.check.allTargets": true,
+    "rust-analyzer.rustfmt.extraArgs": [
+        "+nightly",
+    ],
+    "rust-analyzer.typing.autoClosingAngleBrackets.enable": true,
+    "rust-analyzer.semanticHighlighting.operator.specialization.enable": true,
+    "rust-analyzer.semanticHighlighting.punctuation.separate.macro.bang": true,
+    "rust-analyzer.hover.actions.references.enable": true,
+    "rust-analyzer.showRequestFailedErrorNotification": false,
+
+    // Inlay type hints
     "editor.inlayHints.enabled": "offUnlessPressed",
     "editor.inlayHints.fontFamily": "Consolas",
     "editor.inlayHints.fontSize": 11,
+    // Python-specific
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.variableTypes": true,
+    "python.analysis.inlayHints.pytestParameters": true,
+    // "python.analysis.inlayHints.callArgumentNames": true,
+    // Rust-specific
+    "rust-analyzer.inlayHints.closureReturnTypeHints.enable": "always",
+    "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "always",
+    "rust-analyzer.inlayHints.lifetimeElisionHints.useParameterNames": true,
+    // Go-specific
+    "go.inlayHints.assignVariableTypes": true,
+
+    // Theme and syntax highlighting
+    "workbench.colorTheme": "Monokai",
     "workbench.colorCustomizations": {
         // Name of the theme you are currently using
         "[Monokai]": {
@@ -151,70 +202,8 @@
             ]
         }
     },
-    "Prettier-SQL.commaPosition": "before",
-    "Prettier-SQL.SQLFlavourOverride": "postgresql",
-    "Prettier-SQL.tabSizeOverride": 4,
-    "Prettier-SQL.tabulateAlias": true,
-    "typos.config": "pyproject.toml",
-    "Prettier-SQL.keywordCase": "upper",
-    "python.analysis.ignore": [
-        ".venv/**/*.py",
-        ".venv/**/*.pyi",
-        // When looking at stdlib source VSCode will follow the symlink into the system Python directory which isn't in
-        // Pyrights' ignore list
-        "/usr/lib/python*/*.py",
-        "/usr/lib/python*/*.pyi",
-        "/home/gilgamesh/.vscode-server/**/*.py",
-        "/home/gilgamesh/.vscode-server/**/*.pyi",
-    ],
-    "python.analysis.inlayHints.functionReturnTypes": true,
-    "python.analysis.inlayHints.variableTypes": true,
-    "python.analysis.inlayHints.pytestParameters": true,
-    // "python.analysis.inlayHints.callArgumentNames": true,
-    "ruff.lint.args": [
-        "--config",
-        "pyproject.toml",
-        // When looking at stdlib source VSCode will follow the symlink into the system Python directory which isn't in
-        // ruff's ignore list
-        "--extend-exclude=/usr/lib/python*/*.py",
-        "--extend-exclude=/usr/lib/python*/*.pyi",
-        "--extend-exclude=/home/gilgamesh/.vscode-server/**/*.py",
-        "--extend-exclude=/home/gilgamesh/.vscode-server/**/*.pyi",
-    ],
-    "ruff.organizeImports": true,
-    "ruff.importStrategy": "fromEnvironment",
-    "ruff.ignoreStandardLibrary": true,
-    "[python]": {
-        "editor.defaultFormatter": "charliermarsh.ruff",
-        "editor.semanticHighlighting.enabled": true,
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": "explicit"
-        },
-    },
-    // For dbt
-    "[jinja-sql]": {
-        "editor.defaultFormatter": "innoverio.vscode-dbt-power-user",
-        "editor.formatOnSave": true
-    },
-    "[rust]": {
-        "editor.defaultFormatter": "rust-lang.rust-analyzer",
-        "editor.formatOnSave": true,
-    },
-    "rust-analyzer.inlayHints.closureReturnTypeHints.enable": "always",
-    "rust-analyzer.check.command": "clippy",
-    "rust-analyzer.cargo.features": "all",
-    // `true` by default, but in case this changes we want to be consistent with our `clippy` alias
-    "rust-analyzer.check.allTargets": true,
-    "rust-analyzer.rustfmt.extraArgs": [
-        "+nightly",
-    ],
-    "rust-analyzer.typing.autoClosingAngleBrackets.enable": true,
-    "rust-analyzer.semanticHighlighting.operator.specialization.enable": true,
-    "rust-analyzer.semanticHighlighting.punctuation.separate.macro.bang": true,
-    "rust-analyzer.hover.actions.references.enable": true,
-    "rust-analyzer.showRequestFailedErrorNotification": false,
-    // LSP highlighting
+
+    // LSP semantic highlighting
     // https://code.visualstudio.com/api/language-extensions/semantic-highlight-guide#standard-token-types-and-modifiers
     "editor.semanticTokenColorCustomizations": {
         "[Monokai]": {
@@ -307,13 +296,19 @@
         ".pytest_cache": true,
         ".ruff_cache": true,
         "**/__pycache__": true,
+        "**/.jj": true,
         "**/.pdm-build": true
     },
-    "todo-tree.highlights.defaultHighlight": {
-        "foreground": "#F92472",
-        "opacity": 0,
-        "type": "tag-and-comment"
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        ".venv/**": true,
+        ".pytest_cache": true,
+        ".ruff_cache": true,
+        "**/__pycache__": true,
+        "**/.pdm-build": true
     },
+
     "errorLens.enableOnDiffView": true,
     "errorLens.gutterIconsEnabled": true,
     "errorLens.statusBarIconsEnabled": true,
@@ -328,43 +323,24 @@
     "gitlens.showWelcomeOnInstall": false,
     "gitlens.plusFeatures.enabled": false,
     "errorLens.enabledInMergeConflict": false,
-    "todo-tree.general.tags": [
-        "BUG",
-        "HACK",
-        "FIXME",
-        "TODO",
-        "XXX",
-        "[ ]",
-        "[x]",
-        "NOTE",
-        "SAFETY"
-    ],
-    "[go]": {
-        "editor.formatOnSave": true
-    },
-    "go.formatTool": "gofmt",
-    "workbench.colorTheme": "Monokai",
-    "docker.volumes.sortBy": "CreatedTime",
+
+    "containers.volumes.sortBy": "CreatedTime",
     "hadolint.hadolintPath": "/home/gilgamesh/.local/bin/hadolint",
     "github.branchProtection": true,
     "gitlens.views.commits.files.icon": "status",
     "gitlens.mode.statusBar.enabled": false,
     "gitlens.hovers.currentLine.over": "line",
-    "gitlens.codeLens.enabled": false,
     "gitlens.currentLine.uncommittedChangesFormat": "${working} ${ago}",
-    "gitlens.hovers.enabled": false,
     "evenBetterToml.semanticTokens": true,
-    "gitlens.currentLine.enabled": false,
     "go.toolsManagement.autoUpdate": true,
     "githubPullRequests.fileListLayout": "tree",
     "githubPullRequests.pullBranch": "never",
     "githubPullRequests.useReviewMode": {
-        "merged": false
+        "merged": false,
+        "closed": false
     },
-    "python.analysis.autoFormatStrings": true,
-    "python.analysis.autoImportCompletions": true,
     "githubPullRequests.defaultMergeMethod": "squash",
-    "githubPullRequests.createDraft": true,
+    "githubPullRequests.defaultCreateOption": "createDraft",
     "githubPullRequests.showPullRequestNumberInTree": true,
     "window.commandCenter": false,
     "inlineSQL.dbPort": 5437,
@@ -383,6 +359,33 @@
     "[sql]": {
         "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
     },
-    "python.analysis.diagnosticMode": "workspace",
+    "rainbow_csv.enable_context_menu_head": true,
+    "rainbow_csv.enable_context_menu_tail": true,
+    "redhat.telemetry.enabled": false,
+    "githubPullRequests.createOnPublishBranch": "never",
+    "githd.blameView.enabled": false,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.hovers.avatars": false,
+    "clipboard-manager.snippet.enabled": false,
+    "workbench.editor.labelFormat": "short",
+    "chat.commandCenter.enabled": false,
+    "gitlens.views.scm.grouped.views": {
+        "commits": true,
+        "branches": true,
+        "remotes": true,
+        "stashes": true,
+        "tags": true,
+        "worktrees": true,
+        "contributors": true,
+        "repositories": false,
+        "searchAndCompare": true,
+        "launchpad": false
+    },
+    "files.associations": {
+        "*.just": "just"
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "material-icon-theme.folders.color": "#26a69a",
+    "material-icon-theme.activeIconPack": "none",
+    "jjk.enableAnnotations": false,
 }
-
