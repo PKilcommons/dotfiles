@@ -9,7 +9,7 @@ key = "~/.ssh/id_ed25519_github.pub"
 
 [ui]
 pager = ":builtin"
-default-command = "status"
+default-command = ["status", "--no-pager"]
 conflict-marker-style = "git"
 diff-formatter = ":git"
 
